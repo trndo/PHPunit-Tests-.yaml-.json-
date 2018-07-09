@@ -61,8 +61,8 @@ class YAMLKeyValueStorageTest extends TestCase
 
         $this->storage->clear();
 
-        $this->assertEquals('is not exist', $this->storage->get('first'));
-        $this->assertEquals('is not exist', $this->storage->get('second'));
+        $this->assertEquals('identification', $this->storage->get('first'));
+        $this->assertEquals('directory', $this->storage->get('second'));
 
     }
 }
