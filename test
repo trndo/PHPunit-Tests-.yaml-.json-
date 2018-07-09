@@ -1,0 +1,33 @@
+<?php
+require_once __DIR__.'/vendor/autoload.php';
+
+use app\src\{YAMLKeyValueStorage,MemoryKeyValueStorage,JsonKeyValueStorage};
+
+
+///MemoryKeyValueStorage test
+$ex1=new MemoryKeyValueStorage();
+$ex1->set("first","cow");
+var_dump($ex1);
+echo $ex1->get("first").PHP_EOL;
+echo $ex1->has("first").PHP_EOL;
+echo $ex1->remove('first');
+$ex1->clear();
+
+
+///YAMLKeyValueStorage test
+$n1=new YAMLKeyValueStorage();
+$n1->set("First","Jenya");
+echo $n1->get("First").PHP_EOL;
+echo $n1->has("First").PHP_EOL;
+$n1->remove("First","Jenya");
+//echo $n1->has("First").PHP_EOL;
+$n1->clear();
+
+
+///JsonKeyValueStorage test
+$m1=new JsonKeyValueStorage();
+$m1->set("First","Andrey");
+echo $m1->get("First").PHP_EOL;
+$m1->remove("First");
+echo $m1->has("First").PHP_EOL;
+$m1->clear();
